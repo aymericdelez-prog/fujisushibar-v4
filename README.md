@@ -55,4 +55,4 @@ npx serve websites/fujisushibar-v4/website -l 8080
 - [x] Scrub frames fabrication (canvas + WebP)
 - [ ] Logo définitif (webp haute définition)
 - [ ] Photo du comptoir
-- [ ] Repo GitHub + projet Vercel (Root Directory : `website`)
+- [x] Repo GitHub + projet Vercel (Root Directory : `website`) → https://fujisushibar-v4.vercel.app
