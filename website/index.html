@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fuji Sushibar, sushis faits à la commande, rue de la Dîme 19, Neuchâtel</title>
+<meta name="description" content="Sushis, sashimi et makis préparés à la pièce au comptoir, rue de la Dîme 19 à Neuchâtel. Ouvert sept jours sur sept. −10 % à l'emporter. 032 558 27 28.">
+<meta name="theme-color" content="#F2EEE6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F2EEE6'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23B8332A'/%3E%3C/svg%3E">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Fuji Sushibar, Neuchâtel">
+<meta property="og:description" content="Sushis faits à la commande, au comptoir, rue de la Dîme 19. Ouvert sept jours sur sept.">
+<meta property="og:locale" content="fr_CH">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Fuji Sushibar",
+  "servesCuisine": "Japonaise",
+  "telephone": "+41325582728",
+  "url": "https://fujisushibar.ch/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue de la Dîme 19",
+    "postalCode": "2000",
+    "addressLocality": "Neuchâtel",
+    "addressCountry": "CH"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "17:00", "closes": "21:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "11:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "17:00", "closes": "21:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "11:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "17:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "17:00", "closes": "21:00" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="evitement" href="#carte">Aller directement à la carte</a>
+
+<!-- ══ Ouverture ══ -->
+<header class="ouverture">
+  <div class="ouverture__corps">
+    <h1 class="ouverture__marque">
+      <img class="ouverture__logo" src="images/logo.svg" alt="Fuji Sushibar" width="640" height="200" decoding="async">
+    </h1>
+
+    <p class="ouverture__sous">
+      Sushis, sashimi et makis préparés à la pièce, au comptoir.
+      Ouvert sept jours sur sept.
+    </p>
+
+    <div class="appel">
+      <a class="appel__num" href="tel:+41325582728">032&nbsp;558&nbsp;27&nbsp;28</a>
+      <p class="appel__mention">Commandes à l'emporter et réservations par téléphone.</p>
+    </div>
+
+    <p class="statut" id="statut" data-vide>
+      <span class="statut__pastille"></span>
+      <span class="statut__texte">Chargement des horaires…</span>
+    </p>
+  </div>
+
+  <p class="ouverture__filer" aria-hidden="true">Descendez</p>
+</header>
+
+<main>
+
+<!-- ══ Fabrication — scroll épinglé, vidéo à venir ══ -->
+<section class="fabrication" id="fabrication" aria-labelledby="fabrication-titre">
+  <div class="fabrication__piste" id="fabrication-piste">
+    <div class="fabrication__scene" id="fabrication-scene">
+
+      <h2 class="fabrication__titre" id="fabrication-titre">Un rouleau, du début à la fin.</h2>
+
+      <div class="fabrication__corps">
+        <div class="fabrication__cadre" id="fabrication-cadre">
+          <img
+            class="fabrication__media fabrication__poster"
+            id="fabrication-poster"
+            src="images/scrub/frame-0001.webp"
+            alt="Fabrication d'un maki, du début à la fin"
+            width="960"
+            height="960"
+            decoding="async"
+          >
+          <canvas
+            class="fabrication__media fabrication__canvas"
+            id="fabrication-media"
+            width="960"
+            height="960"
+            aria-hidden="true"
+          ></canvas>
+          <div class="fabrication__jauge" aria-hidden="true"><span id="fabrication-jauge"></span></div>
+        </div>
+
+        <div class="fabrication__textes" id="fabrication-textes" aria-live="polite">
+          <p class="fabrication__etape est-active" data-etape="0">La feuille d'algue.</p>
+          <p class="fabrication__etape" data-etape="1">Le riz, étalé.</p>
+          <p class="fabrication__etape" data-etape="2">Saumon et concombre.</p>
+          <p class="fabrication__etape" data-etape="3">Rouler.</p>
+          <p class="fabrication__etape" data-etape="4">Couper.</p>
+          <p class="fabrication__etape" data-etape="5">Les pièces.</p>
+        </div>
+      </div>
+
+      <p class="fabrication__ancre">Tout est fait à la commande.</p>
+    </div>
+    <div class="fabrication__spacer" id="fabrication-spacer" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ══ Les voix ══ -->
+<section class="voix" aria-labelledby="voix-titre">
+  <div class="bloc">
+    <h2 class="voix__titre" id="voix-titre">
+      Deux clients qui ne se connaissent pas<br>ont écrit exactement la même chose.
+    </h2>
+
+    <div class="voix__grille">
+      <figure class="citation citation--forte">
+        <blockquote><p>S'y rendre <mark>les yeux fermés</mark> ! Parmi les meilleurs sushi que j'ai mangé !</p></blockquote>
+        <figcaption>Melody Chatelard <span>· Google</span></figcaption>
+      </figure>
+
+      <figure class="citation citation--forte">
+        <blockquote><p>Un seul mot, grandiose. Une qualité exceptionnelle, avec du croustillant où il fallait. Pour les amateurs de cuisine japonaise, vous pouvez venir <mark>les yeux fermés</mark>.</p></blockquote>
+        <figcaption>Avis Google</figcaption>
+      </figure>
+
+      <figure class="citation">
+        <blockquote><p>La qualité et la présentation sont au top. Tout est fait à la commande, ça peut être un petit peu long mais ça en vaut la peine.</p></blockquote>
+        <figcaption>Avis Google</figcaption>
+      </figure>
+
+      <figure class="citation">
+        <blockquote><p>Variété de sushis délicieux, aussi bons que beaux. Les patrons sont souriants et généreux. Endroit vraiment recommandé pour manger de bons sushis à Neuch !</p></blockquote>
+        <figcaption>Avis Google</figcaption>
+      </figure>
+    </div>
+
+    <p class="voix__pied">
+      367 avis, une moyenne de 4,8 sur Google, mais ce sont les mots qui reviennent
+      qui comptent, pas le chiffre.
+    </p>
+  </div>
+</section>
+
+<!-- ══ La carte ══ -->
+<section class="carte" id="carte" aria-labelledby="carte-titre">
+  <div class="bloc">
+
+    <header class="carte__entete">
+      <h2 class="carte__titre" id="carte-titre">La carte</h2>
+      <p class="carte__intro">
+        Prix en francs. Le poisson change selon l'arrivage : la dorade et le bar
+        ne sont pas toujours les mêmes d'une semaine à l'autre.
+      </p>
+    </header>
+
+    <section class="jour" aria-labelledby="jour-titre">
+      <div class="jour__tete">
+        <h3 class="jour__titre" id="jour-titre">Le menu du jour</h3>
+        <p class="jour__mention">Servi le midi · soupe miso et amuse-bouche compris</p>
+      </div>
+      <ul class="plats plats--jour">
+        <li class="plat"><span class="plat__nom">Menu sushi<small>3 sashimi, 5 nigiri, 6 maki</small></span><span class="plat__points"></span><span class="plat__prix">24.—</span></li>
+        <li class="plat"><span class="plat__nom">Menu sashimi<small>Assortiment 10 pièces</small></span><span class="plat__points"></span><span class="plat__prix">23.—</span></li>
+        <li class="plat"><span class="plat__nom">Menu maki<small>Assortiment de hosomaki 24 pièces</small></span><span class="plat__points"></span><span class="plat__prix">23.—</span></li>
+        <li class="plat"><span class="plat__nom">Nigiri mixte<small>Assortiment 10 pièces</small></span><span class="plat__points"></span><span class="plat__prix">26.—</span></li>
+        <li class="plat"><span class="plat__nom">Uramaki mixte<small>Assortiment 12 pièces</small></span><span class="plat__points"></span><span class="plat__prix">23.—</span></li>
+        <li class="plat"><span class="plat__nom">Sushi mixte<small>3 sashimi, 4 nigiri, 6 hosomaki</small></span><span class="plat__points"></span><span class="plat__prix">21.—</span></li>
+        <li class="plat"><span class="plat__nom">Hosomaki mixte<small>Assortiment 18 pièces</small></span><span class="plat__points"></span><span class="plat__prix">17.—</span></li>
+      </ul>
+    </section>
+
+    <div class="colonnes">
+
+      <div class="carte__bloc">
+        <h3>Entrées</h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Miso soupe</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Edamame</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Rouleaux de printemps <small>2 pièces</small></span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Crevette panée <small>4 pièces</small></span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Ravioli rôti <small>4 pièces</small></span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Salade wakame</span><span class="plat__points"></span><span class="plat__prix">9.—</span></li>
+          <li class="plat"><span class="plat__nom">Salade d'algue et concombre</span><span class="plat__points"></span><span class="plat__prix">9.—</span></li>
+          <li class="plat"><span class="plat__nom">Salade de calamar</span><span class="plat__points"></span><span class="plat__prix">9.—</span></li>
+          <li class="plat"><span class="plat__nom">Salade aux crabes</span><span class="plat__points"></span><span class="plat__prix">18.—</span></li>
+        </ul>
+      </div>
+
+      <div class="carte__bloc">
+        <h3>Menus</h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Menu Fuji<small>Miso soupe ou salade wakame · 6 sashimi, 5 nigiri, 6 hosomaki, 4 uramaki · dessert au choix</small></span><span class="plat__points"></span><span class="plat__prix">50.—</span></li>
+          <li class="plat"><span class="plat__nom">Menu 1<small>Miso soupe ou salade de calamar · 5 futomaki, 6 nigiri · dessert au choix</small></span><span class="plat__points"></span><span class="plat__prix">42.—</span></li>
+          <li class="plat"><span class="plat__nom">Menu 2<small>Miso soupe ou edamame · 12 hosomaki, 8 uramaki · dessert au choix</small></span><span class="plat__points"></span><span class="plat__prix">35.—</span></li>
+        </ul>
+
+        <h3>Plateaux</h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Plateau 1 <small>Pour une personne · 17 pièces</small></span><span class="plat__points"></span><span class="plat__prix">40.—</span></li>
+          <li class="plat"><span class="plat__nom">Plateau 2 <small>Pour deux personnes · 35 pièces</small></span><span class="plat__points"></span><span class="plat__prix">80.—</span></li>
+        </ul>
+      </div>
+
+      <div class="carte__bloc">
+        <h3>Sashimi <small class="unite">6 pièces</small></h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Thon rouge</span><span class="plat__points"></span><span class="plat__prix">19.—</span></li>
+          <li class="plat"><span class="plat__nom">Saumon</span><span class="plat__points"></span><span class="plat__prix">17.—</span></li>
+          <li class="plat"><span class="plat__nom">Dorade ou bar <small>selon arrivage</small></span><span class="plat__points"></span><span class="plat__prix">18.—</span></li>
+          <li class="plat"><span class="plat__nom">Assortiment <small>12 pièces mixtes</small></span><span class="plat__points"></span><span class="plat__prix">35.—</span></li>
+        </ul>
+
+        <h3>Assortiments mixtes</h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Sashimi mixte <small>6 · 12 · 18 pièces</small></span><span class="plat__points"></span><span class="plat__prix">18 · 35 · 53</span></li>
+          <li class="plat"><span class="plat__nom">Nigiri mixte <small>6 · 12 · 18 pièces</small></span><span class="plat__points"></span><span class="plat__prix">23 · 45 · 68</span></li>
+          <li class="plat"><span class="plat__nom">Hosomaki <small>12 · 24 · 36 pièces</small></span><span class="plat__points"></span><span class="plat__prix">15 · 30 · 45</span></li>
+        </ul>
+      </div>
+
+      <div class="carte__bloc">
+        <h3>Nigiri <small class="unite">2 pièces</small></h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Thon rouge</span><span class="plat__points"></span><span class="plat__prix">9.—</span></li>
+          <li class="plat"><span class="plat__nom">Saumon braisé</span><span class="plat__points"></span><span class="plat__prix">9.—</span></li>
+          <li class="plat"><span class="plat__nom">Saumon</span><span class="plat__points"></span><span class="plat__prix">8.—</span></li>
+          <li class="plat"><span class="plat__nom">Dorade ou bar <small>selon arrivage</small></span><span class="plat__points"></span><span class="plat__prix">8.—</span></li>
+          <li class="plat"><span class="plat__nom">Crevette géante</span><span class="plat__points"></span><span class="plat__prix">8.—</span></li>
+          <li class="plat"><span class="plat__nom">Crevettes crues douces</span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Maquereau</span><span class="plat__points"></span><span class="plat__prix">9.—</span></li>
+          <li class="plat"><span class="plat__nom">Anguille</span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Coquille Saint-Jacques</span><span class="plat__points"></span><span class="plat__prix">12.—</span></li>
+          <li class="plat"><span class="plat__nom">Poulpe</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Calamar</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Omelette</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Avocat</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Inari <small>tofu pané</small></span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Assortiment <small>12 pièces mixtes</small></span><span class="plat__points"></span><span class="plat__prix">45.—</span></li>
+        </ul>
+      </div>
+
+      <div class="carte__bloc">
+        <h3>Gunkan <small class="unite">2 pièces</small></h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Thon épicé</span><span class="plat__points"></span><span class="plat__prix">12.—</span></li>
+          <li class="plat"><span class="plat__nom">Mousse de thon</span><span class="plat__points"></span><span class="plat__prix">11.—</span></li>
+          <li class="plat"><span class="plat__nom">Saumon, sauce pignons</span><span class="plat__points"></span><span class="plat__prix">11.—</span></li>
+          <li class="plat"><span class="plat__nom">Dorade ou bar, sauce pesto</span><span class="plat__points"></span><span class="plat__prix">11.—</span></li>
+          <li class="plat"><span class="plat__nom">Crabe, sauce mangue</span><span class="plat__points"></span><span class="plat__prix">11.—</span></li>
+          <li class="plat"><span class="plat__nom">Œufs de saumon</span><span class="plat__points"></span><span class="plat__prix">12.—</span></li>
+          <li class="plat"><span class="plat__nom">Œufs de poisson volant</span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Corail d'oursin</span><span class="plat__points"></span><span class="plat__prix">15.—</span></li>
+        </ul>
+      </div>
+
+      <div class="carte__bloc">
+        <h3>Hosomaki <small class="unite">6 pièces</small></h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Thon rouge</span><span class="plat__points"></span><span class="plat__prix">9.—</span></li>
+          <li class="plat"><span class="plat__nom">Thon épicé</span><span class="plat__points"></span><span class="plat__prix">12.—</span></li>
+          <li class="plat"><span class="plat__nom">Mousse de thon</span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Saumon</span><span class="plat__points"></span><span class="plat__prix">8.—</span></li>
+          <li class="plat"><span class="plat__nom">Saumon, avocat</span><span class="plat__points"></span><span class="plat__prix">9.—</span></li>
+          <li class="plat"><span class="plat__nom">Gourde</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Tomates séchées</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Radis mariné</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+          <li class="plat"><span class="plat__nom">Concombre</span><span class="plat__points"></span><span class="plat__prix">6.—</span></li>
+          <li class="plat"><span class="plat__nom">Avocat</span><span class="plat__points"></span><span class="plat__prix">7.—</span></li>
+        </ul>
+      </div>
+
+      <div class="carte__bloc">
+        <h3>Uramaki <small class="unite">maki inversé · 8 pièces</small></h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">California roll <small>surimi, avocat</small></span><span class="plat__points"></span><span class="plat__prix">20.—</span></li>
+          <li class="plat"><span class="plat__nom">Thon épicé <small>thon, sauce épicée</small></span><span class="plat__points"></span><span class="plat__prix">20.—</span></li>
+          <li class="plat"><span class="plat__nom">Mousse de thon <small>thon, concombre</small></span><span class="plat__points"></span><span class="plat__prix">20.—</span></li>
+          <li class="plat"><span class="plat__nom">Unagi roll <small>anguille, concombre</small></span><span class="plat__points"></span><span class="plat__prix">20.—</span></li>
+          <li class="plat"><span class="plat__nom">Crispy Ebi roll <small>crevette panée, avocat</small></span><span class="plat__points"></span><span class="plat__prix">20.—</span></li>
+          <li class="plat"><span class="plat__nom">Sake aburi roll <small>avocat, saumon braisé</small></span><span class="plat__points"></span><span class="plat__prix">20.—</span></li>
+          <li class="plat"><span class="plat__nom">Rainbow roll sake <small>saumon, avocat</small></span><span class="plat__points"></span><span class="plat__prix">20.—</span></li>
+        </ul>
+      </div>
+
+      <div class="carte__bloc">
+        <h3>Futomaki <small class="unite">gros rouleaux · 5 pièces</small></h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Futo saumon <small>saumon, avocat</small></span><span class="plat__points"></span><span class="plat__prix">18.—</span></li>
+          <li class="plat"><span class="plat__nom">Futo California <small>crabe, avocat</small></span><span class="plat__points"></span><span class="plat__prix">20.—</span></li>
+          <li class="plat"><span class="plat__nom">Futo mix <small>poissons et garniture</small></span><span class="plat__points"></span><span class="plat__prix">25.—</span></li>
+          <li class="plat"><span class="plat__nom">Futo végétarien <small>légumes mixtes</small></span><span class="plat__points"></span><span class="plat__prix">16.—</span></li>
+        </ul>
+
+        <h3>Temaki <small class="unite">grand cornet · 1 pièce</small></h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Surimi, avocat</span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Thon, avocat</span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Thon épicé</span><span class="plat__points"></span><span class="plat__prix">12.—</span></li>
+          <li class="plat"><span class="plat__nom">Saumon, avocat</span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+          <li class="plat"><span class="plat__nom">Poisson blanc, sauce pesto</span><span class="plat__points"></span><span class="plat__prix">12.—</span></li>
+          <li class="plat"><span class="plat__nom">Crabe, avocat</span><span class="plat__points"></span><span class="plat__prix">12.—</span></li>
+          <li class="plat"><span class="plat__nom">Tempura</span><span class="plat__points"></span><span class="plat__prix">10.—</span></li>
+        </ul>
+      </div>
+
+      <div class="carte__bloc">
+        <h3>Donburi <small class="unite">bol de riz</small></h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Chirashi saumon <small>saumon, avocat</small></span><span class="plat__points"></span><span class="plat__prix">35.—</span></li>
+          <li class="plat"><span class="plat__nom">Chirashi mixte <small>poissons crus mixtes</small></span><span class="plat__points"></span><span class="plat__prix">35.—</span></li>
+          <li class="plat"><span class="plat__nom">Unadon <small>anguille fumée sur riz</small></span><span class="plat__points"></span><span class="plat__prix">38.—</span></li>
+        </ul>
+
+        <h3>Desserts</h3>
+        <ul class="plats">
+          <li class="plat"><span class="plat__nom">Dorayaki</span><span class="plat__points"></span><span class="plat__prix">4.—</span></li>
+          <li class="plat"><span class="plat__nom">Glace <small>thé vert, haricot rouge, sésame noir</small></span><span class="plat__points"></span><span class="plat__prix">3.50</span></li>
+          <li class="plat"><span class="plat__nom">Mochi glacé <small>thé vert, vanille, chocolat, mangue, fleur de cerise</small></span><span class="plat__points"></span><span class="plat__prix">3.50</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ Venir, commander ══ -->
+<section class="venir" id="venir" aria-labelledby="venir-titre">
+  <div class="bloc">
+    <h2 class="venir__titre" id="venir-titre">Passer prendre, ou s'asseoir.</h2>
+
+    <div class="venir__grille">
+
+      <div class="fiche fiche--large">
+        <h3>Emporter</h3>
+        <p class="fiche__fort">−10 % sur les commandes à l'emporter.</p>
+        <p class="fiche__detail">
+          Sauf les menus du jour, les boissons, les desserts et les livraisons.
+          On prépare à votre arrivée, comptez un peu de temps.
+        </p>
+        <a class="lien-appel" href="tel:+41325582728">Appeler le 032 558 27 28</a>
+      </div>
+
+      <div class="fiche">
+        <h3>Où</h3>
+        <p class="fiche__fort">Rue de la Dîme 19<br>2000 Neuchâtel</p>
+        <p class="fiche__detail">Deux places de parking juste à côté du restaurant.</p>
+        <a class="lien" href="https://www.google.com/maps/search/?api=1&query=Rue+de+la+D%C3%AEme+19%2C+2000+Neuch%C3%A2tel" target="_blank" rel="noopener">Ouvrir dans Maps</a>
+      </div>
+
+      <div class="fiche">
+        <h3>Quand</h3>
+        <ul class="horaires" id="horaires">
+          <li data-jour="1"><span>Lundi</span><span>17h – 21h30</span></li>
+          <li data-jour="2"><span>Mardi</span><span>11h – 14h · 17h – 21h30</span></li>
+          <li data-jour="3"><span>Mercredi</span><span>11h – 14h · 17h – 21h30</span></li>
+          <li data-jour="4"><span>Jeudi</span><span>11h – 14h · 17h – 21h30</span></li>
+          <li data-jour="5"><span>Vendredi</span><span>11h – 14h · 17h – 22h</span></li>
+          <li data-jour="6"><span>Samedi</span><span>11h – 14h · 17h – 22h</span></li>
+          <li data-jour="0"><span>Dimanche</span><span>11h – 14h · 17h – 21h</span></li>
+        </ul>
+        <p class="fiche__detail">Ouvert le dimanche, midi et soir.</p>
+      </div>
+
+      <div class="fiche">
+        <h3>Livraison</h3>
+        <p class="fiche__fort">Uber Eats</p>
+        <p class="fiche__detail">La réduction à l'emporter ne s'applique pas aux livraisons.</p>
+      </div>
+
+      <div class="fiche">
+        <h3>Passeport gourmand</h3>
+        <p class="fiche__fort">Accepté</p>
+        <p class="fiche__detail">Réservation par téléphone uniquement, pas en ligne.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="bloc pied__corps">
+    <p class="pied__nom">Fuji Sushibar</p>
+    <p class="pied__ligne">
+      Rue de la Dîme 19, 2000 Neuchâtel ·
+      <a href="tel:+41325582728">032 558 27 28</a>
+    </p>
+    <p class="pied__mention">Ouvert sept jours sur sept. Le poisson dépend de l'arrivage.</p>
+  </div>
+</footer>
+
+<a class="barre-appel" href="tel:+41325582728">
+  <span class="barre-appel__statut" id="barre-statut"></span>
+  <span class="barre-appel__num">Appeler · 032 558 27 28</span>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/fabrication.js"></script>
+</body>
+</html>
